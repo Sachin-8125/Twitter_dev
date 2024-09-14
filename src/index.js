@@ -1,6 +1,5 @@
 const express =  require('express');
 const connect = require('./config/database');
-
 const app = express();
 
 const TweetRepository = require('./repository/tweet-repository');
@@ -15,7 +14,7 @@ app.listen(3000,async() => {
     // });
     //const tweets = await Tweet.find({userEmail:'sachin@1.com'});
    const tweetRepo = new TweetRepository();
-   const tweet  =await tweetRepo.getWithComments('66e55247b75c47572df94ac4');
-   console.log(tweet);
+   const tweet  =await tweetRepo.create({content: 'With hooks now'});
+   console.log(tweet)
 
 });
