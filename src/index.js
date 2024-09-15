@@ -1,13 +1,12 @@
-const express =  require('express');
-const connect = require('./config/database');
+import express from 'express';
+import {connect} from './config/database.js';
 const app = express();
 
-//const HashtagRepository = require('./repository/hashtag-repository');
-const {TweetRepository} = require('./repository/index');
-const TweetService = require('./services/tweet-service');
-
+import service from './services/tweet-service.js';
 app.listen(3000,async() => {
     console.log('Server started');
     await connect();
     console.log('Mongodb started');
+    let ser = new service();
+    await ser.create({content: 'Done with #refractor ?'});
 });
