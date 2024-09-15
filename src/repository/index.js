@@ -1,4 +1,6 @@
+const HashtagRepository = require("./hashtag-repository");
 
 module.exports = {
-    TweetRepository: requestAnimationFrame('./tweet-repository')
+    TweetRepository: require('./tweet-repository'),
+    HashtagRepository: require('./hashtag-repository')
 };
