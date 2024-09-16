@@ -15,6 +15,4 @@ app.listen(3000,async() => {
     console.log('Server started');
     await connect();
     console.log('Mongodb started');
-    let ser = new service();
-    await ser.create({content: 'Capital #FUN'});
 });
