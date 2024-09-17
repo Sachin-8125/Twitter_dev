@@ -15,16 +15,10 @@ app.listen(3000,async() => {
     console.log('Server started');
     await connect();
     console.log('Mongodb started');
-    const userRepo = new UserRepository();
-    const tweetRepo = new TweetRepository();
-    const tweets = await tweetRepo.getAll(0,10);
-    
-    const user = await userRepo.create({
-        email: 'Sachin@admin.com',
-        password: 'PASSWORD',
-        name: 'Sachin'
-    });
-
-    const likeService = new LikeService();
-    await likeService.toggleLike(tweets[0].id,'Tweet',user.id);
+    // const userRepo = new UserRepository();
+    // const tweetRepo = new TweetRepository();
+    // const tweets = await tweetRepo.getAll(0,10);
+    // const users = await userRepo.getAll();
+    // const likeService = new LikeService();
+    // await likeService.toggleLike(tweets[0].id,'Tweet',users[0].id);
 });
